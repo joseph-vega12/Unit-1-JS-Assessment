@@ -119,15 +119,14 @@ function getStarshipPassengerAndCrewSumTotal(character) {
 */
 function getNthFilm(character, filmNumber) {
   // TODO: Add your code here.
+  for(let i = 0; i < character.films.length; i ++){
+    if(filmNumber <= 3){
+      return character.films[filmNumber - 1];
+    }  else{
+      return "nahh";
+    }
+  }
 }
-
-
-
-
-
-
-
-
 
 /**
  * ### Challenge `getCargoCapacityTotal`
