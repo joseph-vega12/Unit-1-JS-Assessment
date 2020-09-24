@@ -77,7 +77,7 @@ function getSummary(character) {
   function getVehiclesCostInCreditsSumTotal(character) {
     let count = 0;
     for (let i = 0; i < character.vehicles.length; i++){
-      count += character.vehicles.cost_in_credits;
+      count += character.vehicles[i].cost_in_credits; 
     }
     return count;
   }
@@ -95,6 +95,13 @@ function getSummary(character) {
 */
 function getStarshipPassengerAndCrewSumTotal(character) {
   // TODO: Add your code here.
+  let count = 0;
+  for(let i = 0; i < character.starships.length; i ++){
+    count += character.starships[i].crew;
+    count += character.starships[i].passengers;
+      // count += character.starships[i].crew character.starships[i].passenger;
+  }
+  return count;
 }
 
 /**
