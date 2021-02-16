@@ -18,8 +18,8 @@ function getName(character) {
   // ⭐️ Example Solution Provided For First Function ⭐️
   return character.name
 }
-
 /**
+
  * ### Challenge `getFilmCount`
  * MVP Challenge 🤓
  * 
@@ -29,8 +29,8 @@ function getName(character) {
  * Sample data expected output: 5
  */
 function getFilmCount(character) {
-  // TODO: Add your code inside the functions (others below).
-
+  // TODO: Add your code inside the functions (others below).\
+  return character.films.length;
 }
 
 /**
@@ -43,6 +43,11 @@ function getFilmCount(character) {
 */
 function getSecondStarshipName(character) {
   // TODO: Add your code here.
+  if (character.starships.length === 0) {
+    return 'none';
+  } else {
+    return character.starships[1].name;
+  }
 }
 
 /**
@@ -56,6 +61,7 @@ function getSecondStarshipName(character) {
  */
 function getSummary(character) {
   // TODO: Add your code here.
+  return `${character.name}, ${character.height}cm, ${character.mass}kg. Featured in ${character.films.length} films.`
 }
 
 /**
@@ -66,9 +72,16 @@ function getSummary(character) {
  * Sum the total cost in credits for all vehicles defined on the input character.
  * Sample data expected output: 8000
 */
-function getVehiclesCostInCreditsSumTotal(character) {
-  // TODO: Add your code here.
-}
+
+
+  function getVehiclesCostInCreditsSumTotal(character) {
+    let count = 0;
+    for (let i = 0; i < character.vehicles.length; i++){
+      count += character.vehicles[i].cost_in_credits; 
+    }
+    return count;
+  }
+
 
 /**
  * ### Challenge `getStarshipPassengerAndCrewSumTotal`
@@ -82,6 +95,13 @@ function getVehiclesCostInCreditsSumTotal(character) {
 */
 function getStarshipPassengerAndCrewSumTotal(character) {
   // TODO: Add your code here.
+  let count = 0;
+  for(let i = 0; i < character.starships.length; i ++){
+    count += character.starships[i].crew;
+    count += character.starships[i].passengers;
+      // count += character.starships[i].crew character.starships[i].passenger;
+  }
+  return count;
 }
 
 /**
@@ -99,6 +119,13 @@ function getStarshipPassengerAndCrewSumTotal(character) {
 */
 function getNthFilm(character, filmNumber) {
   // TODO: Add your code here.
+  for(let i = 0; i < character.films.length; i ++){
+    if(filmNumber <= 3){
+      return character.films[filmNumber - 1];
+    }  else{
+      return "nahh";
+    }
+  }
 }
 
 /**
